@@ -1,4 +1,5 @@
 import Input from "./components/Input";
+import LastUrls from "./components/LastUrls";
 import "./styles/App.css";
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <div className="app-container">
       <h1>Сократитель ссылок</h1>
       <Input />
+      <LastUrls />
     </div>
   );
 }
