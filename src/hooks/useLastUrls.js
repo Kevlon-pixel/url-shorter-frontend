@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export function useLastUrls() {
   const [result, setResult] = useState([]);
-  const [error, setError] = useState();
+  const [error, setError] = useState("");
 
   const serverUrl = process.env.REACT_APP_SERVER_URL;
   const lastUrls = async () => {
@@ -17,7 +17,8 @@ export function useLastUrls() {
 
       setResult(data);
     } catch (err) {
-      setError(err);
+      const message = err instanceof Error ? err.message : String(err);
+      setError(message);
     }
   };
 
