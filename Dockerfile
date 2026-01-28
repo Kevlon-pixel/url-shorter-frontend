@@ -6,7 +6,13 @@ COPY package*.json ./
 
 RUN npm i
 
-COPY . . 
+COPY . .
+
+ARG REACT_APP_SERVER_URL
+
+ENV REACT_APP_SERVER_URL=$REACT_APP_SERVER_URL
+
+RUN npm run build
 
 EXPOSE 3000
 
